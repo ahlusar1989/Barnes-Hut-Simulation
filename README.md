@@ -16,13 +16,16 @@ the total mass and the center of mass of all the particles in this cell?'.
 
 An iteration of the Barnes-Hut algorithm is composed of the following steps:
 
-Construct the quadtree for the current arrangement of the bodies.
-Determine the boundaries, i.e. the square into which all bodies fit.
-Construct a quadtree that covers the boundaries and contains all the bodies.
-Update the bodies -- for each body:
-Update the body position according to its current velocity.
-Using the quadtree, compute the net force on the body by adding the individual forces from all the other bodies.
-Update the velocity according to the net force on that body.
+1. Construct the quadtree for the current arrangement of the bodies.
+2. Determine the boundaries, i.e. the square into which all bodies fit.
+3. Construct a quadtree that covers the boundaries and contains all the bodies.
+
+4. Update the bodies -- for each body:
+⋅⋅1. Update the body position according to its current velocity.
+⋅⋅2. Using the quadtree, compute the net force on the body by adding the individual forces from all the other bodies.
+⋅⋅3. Update the velocity according to the net force on that body.
+
+
 It turns out that, for most spatial distribution of bodies, the expected number of cells that contribute to the net force on a body is log n, so the overall complexity of the Barnes-Hut algorithm is O(n log n).
 
 The main source directory contains an implementation of the following:
