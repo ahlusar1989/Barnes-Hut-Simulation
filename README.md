@@ -21,9 +21,9 @@ An iteration of the Barnes-Hut algorithm is composed of the following steps:
 3. Construct a quadtree that covers the boundaries and contains all the bodies.
 
 4. Update the bodies -- for each body:
-⋅⋅1. Update the body position according to its current velocity.
-⋅⋅2. Using the quadtree, compute the net force on the body by adding the individual forces from all the other bodies.
-⋅⋅3. Update the velocity according to the net force on that body.
+  1. Update the body position according to its current velocity.
+  2. Using the quadtree, compute the net force on the body by adding the individual forces from all the other bodies.
+  3. Update the velocity according to the net force on that body.
 
 
 It turns out that, for most spatial distribution of bodies, the expected number of cells that contribute to the net force on a body is log n, so the overall complexity of the Barnes-Hut algorithm is O(n log n).
